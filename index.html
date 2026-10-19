@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lavinia Carbonilla | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600;1,9..144,700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--bg:#f6f3ff;--ink:#2d2250;--muted:#6b6290;--rose:#7c5cdb;--deep:#4b2fa8;--pink:#c9b8f5;--blush:#e9e1ff;--card:rgba(255,255,255,.78);--line:#d9cdf7;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5.5rem}
+body{margin:0;color:var(--ink);font:400 1rem/1.75 Nunito,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:clip;background:var(--bg)}
+/* decorative background */
+.bg{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;
+background:radial-gradient(60rem 36rem at 90% -10%,#d9ccff 0,transparent 60%),radial-gradient(50rem 34rem at -10% 35%,#e2d8ff 0,transparent 60%),radial-gradient(46rem 30rem at 100% 95%,#cdbdff 0,transparent 60%),var(--bg)}
+.bg::before{content:"";position:absolute;inset:0;background-image:radial-gradient(#b9a5ee 1.2px,transparent 1.4px);background-size:30px 30px;opacity:.35}
+.bg i{position:absolute;border-radius:50%;filter:blur(2px);opacity:.55}
+.bg i:nth-child(1){width:16rem;height:16rem;left:-5rem;top:8%;background:radial-gradient(circle at 30% 30%,#fff,#cbb9ff)}
+.bg i:nth-child(2){width:11rem;height:11rem;right:6%;top:42%;background:radial-gradient(circle at 30% 30%,#fff,#b49bff)}
+.bg i:nth-child(3){width:20rem;height:20rem;left:30%;bottom:-9rem;background:radial-gradient(circle at 30% 30%,#fff,#d3c4ff)}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:700;line-height:1.05;margin:0}
+a{color:var(--deep)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--rose);outline-offset:3px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 clamp(1.1rem,5vw,2.5rem)}
+.bar{position:sticky;top:.7rem;z-index:10;width:min(62rem,calc(100% - 1.4rem));margin:.7rem auto 0;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.5rem .6rem .5rem 1.3rem;background:rgba(255,255,255,.8);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;box-shadow:0 10px 30px -20px var(--rose)}
+.brand{font-family:"Fraunces",serif;font-weight:700;font-size:1.3rem;text-decoration:none;color:var(--deep);white-space:nowrap}
+nav{display:flex;gap:.15rem;overflow-x:auto;scrollbar-width:none}
+nav a{text-decoration:none;color:var(--muted);font-weight:500;font-size:.9rem;padding:.4rem .9rem;border-radius:999px;white-space:nowrap;transition:background .2s,color .2s}
+nav a:hover{color:var(--deep)}
+nav a.active{background:linear-gradient(90deg,var(--rose),#9b7df0);color:#fff}
+section{padding:4.5rem 0 .5rem}
+.hero{text-align:center;padding-top:4rem}
+.arch{width:13rem;aspect-ratio:3/4;margin:0 auto 1.6rem;border-radius:50% 50% 1.4rem 1.4rem/38% 38% 1.4rem 1.4rem;background:linear-gradient(160deg,#fff,var(--pink));border:5px solid #fff;box-shadow:0 0 0 2px var(--pink),0 24px 40px -22px var(--rose);display:grid;place-items:center;overflow:hidden}
+.arch img{width:100%;height:100%;object-fit:cover}
+.hello{font-style:italic;font-family:"Fraunces",serif;font-size:1.6rem;color:var(--rose);margin:0}
+h1{font-size:clamp(2.7rem,8.5vw,5.2rem);letter-spacing:-.01em;color:var(--deep)}
+h1 em{color:var(--rose)}
+.role{font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:.85rem;color:var(--muted);margin:1rem 0}
+.lead{max-width:34rem;margin:0 auto 1.8rem;color:var(--muted);font-size:1.05rem}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:.95rem;padding:.8rem 1.8rem;border-radius:999px;background:linear-gradient(90deg,var(--rose),#9b7df0);color:#fff;margin:.25rem .4rem;box-shadow:0 12px 24px -12px var(--rose);transition:transform .2s}
+.btn:hover{transform:translateY(-3px)}
+.btn.alt{background:#fff;color:var(--deep);border:1.5px solid var(--pink);box-shadow:none}
+.eyebrow{font-family:"Fraunces",serif;font-style:italic;font-size:1.35rem;color:var(--rose);margin:0}
+h2{font-size:clamp(2.2rem,5vw,3.4rem);margin:.1rem 0 1.2rem;color:var(--deep)}
+.card{background:var(--card);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:1.6rem;padding:clamp(1.3rem,3vw,2rem);box-shadow:0 18px 36px -26px var(--rose);transition:transform .25s}
+.card:hover{transform:translateY(-4px)}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:1.4rem}
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:.9rem}
+.facts li{display:flex;justify-content:space-between;gap:1rem;padding-bottom:.7rem;border-bottom:1px dashed var(--pink)}
+.facts li:last-child{border:0;padding:0}
+.facts b{color:var(--deep);font-weight:600}
+.facts span{text-align:right}
+.chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.7rem}
+.chips li{padding:.55rem 1.2rem;border-radius:999px;background:#fff;border:1.5px solid var(--pink);font-weight:500}
+.chips li:nth-child(odd){background:var(--blush)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.4rem}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(20rem,1fr))}
+.thumb{aspect-ratio:16/10;border:2px solid var(--pink);border-radius:1.1rem;overflow:hidden;margin-bottom:1rem;background:var(--blush)}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.proj h3{font-size:1.7rem;color:var(--deep);margin-bottom:.3rem}
+.proj p{margin:0;color:var(--muted);font-size:.95rem}
+.quiz h3{font-size:1.5rem;color:var(--deep);margin-bottom:.4rem}
+.score{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:3.6rem;line-height:1;color:var(--rose);margin:.2rem 0 .9rem}
+.score small{font-size:1.6rem;color:var(--muted);margin-left:.15rem}
+.track{height:.6rem;border-radius:99px;background:var(--blush);overflow:hidden}
+.track span{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--rose),#9b7df0)}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.2rem;margin-top:1.4rem}
+.photo{position:relative;margin:0;border-radius:1.2rem;overflow:hidden;border:4px solid #fff;box-shadow:0 0 0 2px var(--pink),0 18px 30px -22px var(--rose);background:#fff}
+.photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;filter:saturate(1.1) brightness(1.05) contrast(1.03)}
+.photo::after{content:"";position:absolute;left:0;right:0;top:0;aspect-ratio:4/3;background:linear-gradient(135deg,rgba(124,92,219,.28),rgba(201,184,245,.32));mix-blend-mode:soft-light;pointer-events:none}
+.photo figcaption{position:relative;z-index:1;padding:.6rem 1rem;font-weight:600;font-size:.92rem;color:var(--deep);background:#fff}
+.contact{text-align:center;border-radius:2rem;padding:clamp(2.2rem,6vw,4.2rem);background:linear-gradient(135deg,#c4b3fa,#9c82ee);color:#2d2250;box-shadow:0 24px 40px -26px var(--rose)}
+.contact h2{color:#fff;text-shadow:0 2px 0 rgba(75,47,168,.3)}
+.contact p{max-width:30rem;margin:0 auto 1.3rem}
+.contact .btn{background:#fff;color:var(--deep)}
+.contact .btn.alt{background:transparent;color:#fff;border:1.5px solid #fff}
+.contact a.mail{color:#fff;font-weight:700}
+footer{text-align:center;color:var(--muted);font-size:.9rem;padding:2.5rem 0 3rem}
+@media (max-width:760px){.about{grid-template-columns:1fr}.brand{font-size:1.25rem}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.btn{transition:none}}
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<header class="bar">
+  <a class="brand" href="#home">Lavinia C.</a>
+  <nav id="nav" aria-label="Main">
+    <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#quizzes">Quizzes</a><a href="#bjmp">BJMP</a><a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section id="home" class="hero">
+    <div class="arch"><img src="profile.jpg" alt="Profile photo of Lavinia Carbonilla"></div>
+    <p class="hello">Hello, I’m</p>
+    <h1>Lavinia <em>Carbonilla</em></h1>
+    <p class="role">4th-Year BSIT Student</p>
+    <p class="lead">I love learning about computers and different topics in information technology.</p>
+    <a class="btn" href="#projects">View my work</a><a class="btn alt" href="#contact">Say hello</a>
+  </section>
+
+  <section id="about">
+    <p class="eyebrow">get to know me</p>
+    <h2>About me</h2>
+    <div class="about">
+      <div class="card"><p>I’m a fourth-year Bachelor of Science in Information Technology student at Cebu Eastern College, Inc. I like learning about computers and different topics in information technology, and I want to keep improving my skills with every project I make.</p></div>
+      <div class="card">
+        <ul class="facts">
+          <li><b>Course</b><span>BS Information Technology</span></li>
+          <li><b>Year level</b><span>4th Year</span></li>
+          <li><b>School</b><span>Cebu Eastern College, Inc.</span></li>
+          <li><b>Interests</b><span>Computers &amp; IT topics</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <p class="eyebrow">what I’m good at</p>
+    <h2>Skills</h2>
+    <div class="card"><ul class="chips"><li>HTML &amp; CSS</li><li>JavaScript</li><li>Web Design</li><li>Problem Solving</li><li>Teamwork</li></ul></div>
+  </section>
+
+  <section id="projects">
+    <p class="eyebrow">things I’ve made</p>
+    <h2>Projects</h2>
+    <div class="grid two">
+      <article class="card proj"><div class="thumb" style="background:#120d22"><img src="crossword-adventure.jpg" alt="Crossword Adventure game screen" style="object-fit:contain"></div><h3>Crossword Adventure</h3><p>A maze game that asks the player general questions. If the player wins, they earn a badge.</p></article>
+      <article class="card proj"><div class="thumb"><img src="animal-healthcare-system.jpg" alt="Animal Health Care System title slide"></div><h3>Animal Healthcare System</h3><p>An online announcement system for Barangay Labangon, so pet owners and residents can find out when vaccines for dogs and cats are available.</p></article>
+    </div>
+  </section>
+
+  <section id="quizzes">
+    <p class="eyebrow">my scores</p>
+    <h2>SEMIFINAL QUIZZES</h2>
+    <div class="grid two">
+      <div class="card quiz"><h3>Semifinal Quiz 1</h3><div class="score">20<small>/20</small></div><div class="track"><span style="width:100%"></span></div></div>
+      <div class="card quiz"><h3>Semifinal Quiz 2</h3><div class="score">26<small>/30</small></div><div class="track"><span style="width:86.7%"></span></div></div>
+    </div>
+  </section>
+
+  <section id="bjmp">
+    <p class="eyebrow">my experience</p>
+    <h2>BJMP ORIENTATION</h2>
+    <div class="card">
+      <p>I attended the BJMP Orientation together with students from different schools. It was held in a big hall, and it gave me a chance to learn something new outside the classroom.</p>
+      <div class="gallery">
+        <figure class="photo"><img src="bjmp-hall-1.jpg" alt="Students seated in a large hall during the orientation"><figcaption>Inside the orientation hall</figcaption></figure>
+        <figure class="photo"><img src="bjmp-hall-2.jpg" alt="View of the stage from the audience during the orientation"><figcaption>The stage and speakers</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <p class="eyebrow" style="color:#fff">let’s connect</p>
+      <h2>Get in touch</h2>
+      <p>Want to talk about my work? Send me an email at <a class="mail" href="mailto:lavsyou0@gmail.com">lavsyou0@gmail.com</a></p>
+      <a class="btn" href="mailto:lavsyou0@gmail.com">Email me</a><a class="btn alt" href="#home">Back to top</a>
+    </div>
+  </section>
+</main>
+<footer>&copy; <span id="y">2026</span> Lavinia Carbonilla</footer>
+
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+var links=document.querySelectorAll('#nav a');
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id)})})},{rootMargin:'-40% 0px -50% 0px'});
+  ['home','about','skills','projects','quizzes','bjmp','contact'].forEach(function(id){io.observe(document.getElementById(id))});
+}
+</script>
+</body>
+      </html>
